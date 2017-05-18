@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <title>张煜</title>
     <style>
-        #myCanvas {
-            position:absolute;
-            left:0px;
-            top:0px;
+        *{
+            margin: 0;
+            padding: 0;
         }
     </style>
 </head>
 <body>
-<canvas id="canvas" width="1300" height="800" style="border:1px solid #000;margin: 0px auto;display: block;"></canvas>
+<canvas id="canvas"></canvas>
 </body>
-
 <script>
     var canvas = document.getElementById("canvas");
     var c = canvas.getContext("2d");
     var arr = [];
-    var winw = canvas.width;
-    var winh = canvas.height;
+    var winw = document.documentElement.clientWidth;
+    var winh = document.documentElement.clientHeight;
     var time = false
     var px;
     var py;
-
+document.getElementById('canvas').width=winw;
+document.getElementById('canvas').height=winh;
+console.log(winw);
     function ain() {
         c.clearRect(0, 0, winw, winh)
         requestAnimationFrame(ain);
